@@ -27,18 +27,20 @@ export const projects: Project[] = [
     id: 'nextage',
     name: 'Nextage Class',
     category: 'Organização de aulas',
-    status: 'Demo local • piloto em desenvolvimento',
+    status: 'Demo pública • piloto em desenvolvimento',
     description: 'Uma agenda que conecta cada aula à continuidade do aluno.',
     focus:
       'Planejamento, registro pedagógico e pedidos de horário para professores particulares de idiomas.',
     technologies: ['React', 'TypeScript', 'ASP.NET Core no piloto', 'PostgreSQL no piloto'],
     code: 'https://github.com/cristianworth/nextage-class',
+    demo: 'https://cristianworth.github.io/nextage-class/',
     caseSlug: 'nextage-class',
     image: 'nextage',
-    imageAlt: 'Nextage Class: agenda semanal e acompanhamento de alunos fictícios na demo local.',
+    imageAlt: 'Nextage Class: agenda semanal e acompanhamento de alunos fictícios na demo pública.',
     imageWidth: 1440,
-    imageHeight: 960,
-    demoNote: 'A demo local usa dados fictícios. O piloto com servidor é uma frente separada.',
+    imageHeight: 1416,
+    demoNote:
+      'Sem login. Dados fictícios neste navegador; o piloto com servidor é uma frente separada.',
   },
   {
     id: 'worklog',
@@ -63,17 +65,19 @@ export const projects: Project[] = [
     id: 'fitness',
     name: 'Fitness Lab',
     category: 'Treinos e alimentação',
-    status: 'Aplicação local',
+    status: 'Demo pública com dados fictícios',
     description: 'Treinos, alimentação e evolução no mesmo diário.',
     focus:
       'Sessões retomáveis, histórico com contexto e backup dos registros armazenados no navegador.',
     technologies: ['React', 'TypeScript', 'IndexedDB'],
     code: 'https://github.com/cristianworth/fitness-lab',
-    demoNote: 'Demonstração isolada disponível na execução local. Publicação online em validação.',
+    demo: 'https://cristianworth.github.io/fitness-lab/?mode=demo',
+    demoNote:
+      'Sem conta. Dados sintéticos em banco isolado no navegador; restauração mediante confirmação.',
     image: 'fitness',
     imageAlt: 'Fitness Lab: painel de treino e alimentação preenchido com dados sintéticos.',
     imageWidth: 1280,
-    imageHeight: 1318,
+    imageHeight: 1605,
   },
   {
     id: 'gacha',
@@ -200,6 +204,10 @@ export const cases: CaseStudy[] = [
       },
     ],
     evidence: [
+      {
+        label: 'Roteiro da demonstração pública',
+        url: 'https://github.com/cristianworth/nextage-class/blob/master/docs/public-demo.md',
+      },
       {
         label: 'Visão de produto e participação',
         url: 'https://github.com/cristianworth/nextage-class/blob/master/docs/product-vision.md',

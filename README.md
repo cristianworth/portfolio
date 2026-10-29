@@ -38,6 +38,6 @@ Leia o [guia de manutenção](docs/maintenance.md) antes de adicionar uma demo o
 
 O workflow `.github/workflows/pages.yml` compila, verifica e publica somente `dist` em cada push para `main`. Pages precisa estar configurado com source **GitHub Actions**. Configuração baseada nos guias oficiais de [Vite](https://vite.dev/guide/static-deploy.html#github-pages) e [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-github-actions-for-github-pages).
 
-As demos dos projetos têm suas próprias garantias e estágios. Worklog simula o envio; Gacha Cloud tem perfis compartilhados e não é oferecido como demo descartável; OCR é laboratório local. Nextage e Fitness só ganham links online após verificação. A assistência de IA está declarada, e a prática profissional é separada do aprendizado em projetos.
+As demos dos projetos têm suas próprias garantias e estágios. Nextage demonstra dados fictícios e é separado do piloto com servidor; Worklog simula o envio; Fitness usa um banco demonstrativo isolado. Essas demos e Weather têm URLs públicas verificadas. Gacha Cloud tem perfis compartilhados e não é oferecido como demo descartável; OCR é laboratório local. A assistência de IA está declarada, e a prática profissional é separada do aprendizado em projetos.
 
 Código e conteúdo originais sob [MIT](LICENSE). Materiais de terceiros em [NOTICE.md](NOTICE.md). Este site foi implementado com assistência de IA a partir do escopo e das evidências fornecidas por Cristian.

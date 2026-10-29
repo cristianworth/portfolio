@@ -31,4 +31,4 @@ Não impedem a publicação:
 - Disponibilizar currículo revisado se desejar um link de download.
 - Autorizar um exemplo público do OCR antes de incluir captura.
 
-URLs de Nextage/Fitness dependem da conclusão e verificação da hospedagem nos respectivos projetos, não de inventar um endereço.
+As demos de Nextage e Fitness foram publicadas pelos respectivos projetos durante esta entrega. As URLs documentadas foram abertas e verificadas antes de serem incorporadas. O parâmetro `?mode=demo` do Fitness entra diretamente no banco fictício isolado.

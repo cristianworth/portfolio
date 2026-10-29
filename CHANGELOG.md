@@ -6,6 +6,7 @@ Use semantic versioning for a coherent release, rather than incrementing for eac
 
 - First portfolio in Brazilian Portuguese, with professional experience, selected projects and contact links.
 - Two evidence-based cases: Nextage Class and Worklog for Redmine.
+- Verified public demo links for Nextage, Worklog and Fitness, plus the Weather application.
 - Responsive blue, indigo and cyan identity, real product captures, local fonts and reduced-motion support.
 - Pre-rendered static routes, page metadata, sharing image, favicon, sitemap and custom 404.
 - GitHub Pages deployment workflow, route tests and build verification.

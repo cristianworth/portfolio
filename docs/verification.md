@@ -16,7 +16,7 @@ Data: 29/10/2026. Escopo: este portfólio, sem executar novamente as suítes dos
 
 ## Links e conteúdo
 
-Repositórios, documentos dos cases e fontes de capturas responderam com HTTP 200. Worklog e Weather responderam e foram identificados como os produtos esperados. A checagem automatizada do LinkedIn retornou 999, bloqueio do serviço; o endereço é o fornecido por Cristian. As páginas do próprio portfólio serão reconferidas após o deploy.
+Repositórios, documentos dos cases e fontes de capturas responderam com HTTP 200. Worklog, Weather, Nextage e Fitness foram abertos e identificados como os produtos esperados. Nextage e Fitness concluíram suas publicações durante esta entrega; as URLs documentadas foram verificadas antes da inclusão. A checagem automatizada do LinkedIn retornou 999, bloqueio do serviço; o endereço é o fornecido por Cristian.
 
 Revisão independente das fontes conferiu separação demo/piloto, assistência de IA, uso de TeamCity, autoria pontual de testes e interesses futuros. Não há currículo presumido, anos, métricas ou resultados profissionais inventados.
 
@@ -24,9 +24,13 @@ Revisão independente das fontes conferiu separação demo/piloto, assistência 
 
 - Não houve execução em aparelho físico, Safari ou Firefox, nem auditoria por leitor de tela. A revisão responsiva usou viewport do navegador.
 - Os testes do site não certificam os fluxos das aplicações externas.
-- Nextage e Fitness têm trabalho de publicação em andamento em outros chats; não foram incluídas URLs presumidas.
+- Os fluxos completos de Nextage e Fitness pertencem às validações dos respectivos projetos. Aqui foram conferidos entrada, identificação da demo e destinos dos links.
 - OCR não tem captura pública elegível. Gacha compartilhado não é apresentado como demo descartável.
 
 ## Publicação
 
-GitHub Pages habilitado com source GitHub Actions no repositório público `cristianworth/portfolio`. O resultado da execução e a conferência pública são registrados após o primeiro push.
+GitHub Pages habilitado com source GitHub Actions no repositório público `cristianworth/portfolio`. [Primeira publicação aprovada](https://github.com/cristianworth/portfolio/actions/runs/40930290331), a partir do commit `438a099`.
+
+A conferência HTTP pública retornou 200 para início, os dois cases e créditos, com títulos/canonical específicos e conteúdo pré-renderizado. Um caminho inexistente retornou 404 com a página própria. JS, CSS, favicon e as cinco capturas responderam com 200. Os dois cases foram abertos diretamente e recarregados em desktop e celular. As seis imagens da página inicial carregaram no navegador, sem erros de console observados.
+
+Capturas da revisão local ficam em `work/qa/` (ignoradas pelo Git): desktop, celular, página completa e os dois cases em ambas as larguras. Relatórios HTTP ficam em `work/link-report.json` e `work/public-report.json`. A entrega do chat inclui as capturas finais.

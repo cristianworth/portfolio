@@ -568,7 +568,7 @@ function CasePage({ study }: { study: CaseStudy }) {
             <figcaption>
               Captura real da interface com dados demonstrativos.{' '}
               {project.id === 'nextage'
-                ? 'A simulação local é separada do piloto com servidor.'
+                ? 'A demonstração é separada do piloto com servidor.'
                 : 'O envio apresentado na demo é simulado.'}
             </figcaption>
           </figure>
@@ -667,7 +667,7 @@ function Credits() {
         {projects.map((p) => (
           <li key={p.id}>
             <a
-              href={`${p.code}/blob/${['nextage', 'worklog'].includes(p.id) ? 'master' : 'main'}/docs/images/${({ nextage: 'overview.png', worklog: 'demo.png', fitness: 'dashboard-desktop.png', gacha: 'overview.png', weather: 'desktop.png' } as Record<string, string>)[p.id]}`}
+              href={`${p.code}/blob/${['nextage', 'worklog'].includes(p.id) ? 'master' : 'main'}/docs/images/${({ nextage: 'overview.png', worklog: 'demo.png', fitness: 'public-demo-desktop.png', gacha: 'overview.png', weather: 'desktop.png' } as Record<string, string>)[p.id]}`}
             >
               {p.name}: captura original
             </a>
