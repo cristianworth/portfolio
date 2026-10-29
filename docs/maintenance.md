@@ -20,7 +20,7 @@ Use somente material público/autorizado, com dados fictícios quando necessári
 
 O screenshot Worklog original usa extensão PNG com conteúdo JPEG; qualquer conversor que detecte o formato pelo conteúdo pode lê-lo. Não use imagens pessoais do laboratório OCR.
 
-O utilitário incluído faz a conversão: `node scripts/prepare-image.mjs project-name caminho-da-imagem-autorizada`. A origem não é adicionada automaticamente ao Git; confira dados e direitos antes de usar.
+O utilitário incluído faz a conversão: `node scripts/prepare-image.mjs project-name caminho-da-imagem-autorizada`. A origem não é adicionada automaticamente ao Git; confira dados e direitos antes de usar. Ao substituir uma captura publicada, use um nome novo (por exemplo, `nextage-public` ou uma data) e atualize `image`, para que navegadores recebam a imagem nova sem aguardar expiração do cache.
 
 Fontes ficam nos pacotes `@fontsource-variable/*`; suas licenças públicas em `public/licenses/`. Atualize os avisos ao trocar tipografia. A imagem social é `public/assets/social.png` (1200×630).
 

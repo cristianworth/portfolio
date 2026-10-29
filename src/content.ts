@@ -35,7 +35,7 @@ export const projects: Project[] = [
     code: 'https://github.com/cristianworth/nextage-class',
     demo: 'https://cristianworth.github.io/nextage-class/',
     caseSlug: 'nextage-class',
-    image: 'nextage',
+    image: 'nextage-public',
     imageAlt: 'Nextage Class: agenda semanal e acompanhamento de alunos fictícios na demo pública.',
     imageWidth: 1440,
     imageHeight: 1416,
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     demo: 'https://cristianworth.github.io/fitness-lab/?mode=demo',
     demoNote:
       'Sem conta. Dados sintéticos em banco isolado no navegador; restauração mediante confirmação.',
-    image: 'fitness',
+    image: 'fitness-public',
     imageAlt: 'Fitness Lab: painel de treino e alimentação preenchido com dados sintéticos.',
     imageWidth: 1280,
     imageHeight: 1605,

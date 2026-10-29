@@ -31,6 +31,8 @@ Revisão independente das fontes conferiu separação demo/piloto, assistência 
 
 GitHub Pages habilitado com source GitHub Actions no repositório público `cristianworth/portfolio`. [Primeira publicação aprovada](https://github.com/cristianworth/portfolio/actions/runs/40930290331), a partir do commit `438a099`.
 
+A [integração das demos públicas de Nextage e Fitness também passou no Actions](https://github.com/cristianworth/portfolio/actions/runs/40931212767). A checagem dos 36 endereços usados encontrou 35 respostas 200 e apenas o bloqueio automatizado 999 do LinkedIn. Capturas atualizadas recebem nomes novos para evitar que uma versão antiga permaneça no cache do navegador.
+
 A conferência HTTP pública retornou 200 para início, os dois cases e créditos, com títulos/canonical específicos e conteúdo pré-renderizado. Um caminho inexistente retornou 404 com a página própria. JS, CSS, favicon e as cinco capturas responderam com 200. Os dois cases foram abertos diretamente e recarregados em desktop e celular. As seis imagens da página inicial carregaram no navegador, sem erros de console observados.
 
 Capturas da revisão local ficam em `work/qa/` (ignoradas pelo Git): desktop, celular, página completa e os dois cases em ambas as larguras. Relatórios HTTP ficam em `work/link-report.json` e `work/public-report.json`. A entrega do chat inclui as capturas finais.
