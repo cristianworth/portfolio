@@ -1,6 +1,6 @@
 # Direção visual
 
-O site apresenta um desenvolvedor de backend a quem quer conhecer aplicações e o raciocínio por trás delas. A composição usa o contraste entre uma abertura tipográfica e a interface real de um produto. O título é a assinatura visual; o restante dá espaço às capturas e à leitura.
+O site apresenta Cristian Weissmantel, desenvolvedor pleno, suas tecnologias e seus projetos. A abertura destaca nome e cargo ao lado da interface real de uma aplicação. Os textos descrevem atuação, funcionalidades e decisões, sem slogans de campanha. A revisão de 01/11/2026 segue o alinhamento do README, incluindo a experiência dos projetos pessoais nas skills.
 
 ## Tokens
 
@@ -27,6 +27,6 @@ outros projetos                 outros projetos
 experiência / sobre / contato  experiência / sobre / contato
 ```
 
-A referência azul/índigo/ciano do perfil foi adaptada sem reproduzir os badges ou banners do GitHub. Nextage conserva o tom verde da sua captura; Worklog mantém sua interface e contexto azul. Os produtos não recebem uma marca substituta.
+A paleta azul/índigo/ciano do site foi preservada nesta revisão. As tecnologias aparecem em quatro grupos por área, com tags de texto legíveis. Nextage e Worklog conservam suas interfaces nas capturas; os produtos não recebem uma marca substituta.
 
 Na revisão inicial, a proposta foi ajustada para evitar um mural de cards iguais: dois cases com composições alternadas, três projetos complementares menores, laboratório em linha e experiência em uma faixa própria. O único movimento de entrada está na vitrine; a troca de produto responde à ação do visitante. `prefers-reduced-motion` remove entrada, transições, inclinação e rolagem suave.

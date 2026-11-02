@@ -6,9 +6,9 @@ const pages = [
   {
     page: 'home',
     path: '',
-    title: 'Cristian Weissmantel | Desenvolvedor backend .NET',
+    title: 'Cristian Weissmantel | Desenvolvedor Pleno',
     description:
-      'Experiência em software corporativo com C#/.NET. Conheça os projetos, experimente aplicações e explore decisões de engenharia de Cristian Weissmantel.',
+      'Cristian Weissmantel, desenvolvedor pleno. C#/.NET, React, TypeScript e bancos de dados relacionais. Projetos, demos e cases de desenvolvimento web.',
   },
   {
     page: 'nextage-class',

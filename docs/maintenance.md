@@ -12,7 +12,7 @@ Para incluir uma demo:
 4. Acrescente `demo` com a URL HTTPS e atualize `status` e `demoNote`. O link aparece automaticamente. Sem URL verificada, omita `demo`: o código e o case continuam acessíveis.
 5. Releia o case se o estágio tiver mudado. Não transforme publicação de demo em conclusão do piloto.
 
-Experiência profissional e os três contextos de tecnologias ficam em `src/App.tsx`. Evite datas, métricas, responsabilidade de arquitetura ou domínio de uma ferramenta sem confirmação. Dados de contato também estão em `src/content.ts`.
+Experiência e apresentação ficam em `src/App.tsx`. Cargo, empresa, contato e os quatro grupos de tecnologias (`stackGroups`) ficam em `src/content.ts`. As stacks reúnem experiência profissional e projetos pessoais. Use descrições diretas, sem slogans e sem transformar o uso de IA em ressalvas repetidas sobre as habilidades. Evite datas, métricas e responsabilidades sem confirmação.
 
 ## Capturas
 
@@ -22,7 +22,7 @@ O screenshot Worklog original usa extensão PNG com conteúdo JPEG; qualquer con
 
 O utilitário incluído faz a conversão: `node scripts/prepare-image.mjs project-name caminho-da-imagem-autorizada`. A origem não é adicionada automaticamente ao Git; confira dados e direitos antes de usar. Ao substituir uma captura publicada, use um nome novo (por exemplo, `nextage-public` ou uma data) e atualize `image`, para que navegadores recebam a imagem nova sem aguardar expiração do cache.
 
-Fontes ficam nos pacotes `@fontsource-variable/*`; suas licenças públicas em `public/licenses/`. Atualize os avisos ao trocar tipografia. A imagem social é `public/assets/social.png` (1200×630).
+Fontes ficam nos pacotes `@fontsource-variable/*`; suas licenças públicas em `public/licenses/`. Atualize os avisos ao trocar tipografia. A imagem social é `public/assets/profile-social.png` (1200×630), gerada por `node scripts/generate-social.mjs`. Ao trocar o nome do arquivo, atualize os metadados em `index.html`.
 
 ## Rotas e metadados
 

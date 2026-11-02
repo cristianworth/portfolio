@@ -36,3 +36,13 @@ A [integração das demos públicas de Nextage e Fitness também passou no Actio
 A conferência HTTP pública retornou 200 para início, os dois cases e créditos, com títulos/canonical específicos e conteúdo pré-renderizado. Um caminho inexistente retornou 404 com a página própria. JS, CSS, favicon e as cinco capturas responderam com 200. Os dois cases foram abertos diretamente e recarregados em desktop e celular. As seis imagens da página inicial carregaram no navegador, sem erros de console observados.
 
 Capturas da revisão local ficam em `work/qa/` (ignoradas pelo Git): desktop, celular, página completa e os dois cases em ambas as larguras. Relatórios HTTP ficam em `work/link-report.json` e `work/public-report.json`. A entrega do chat inclui as capturas finais.
+
+## Revisão de apresentação 0.1.1 — 01/11/2026
+
+- Consulta à conversa “cristianworth readme” e ao README atual, apenas para leitura.
+- Nome e cargo na abertura; descrições diretas em projetos, cases, experiência, Sobre e contato.
+- Stacks profissionais e de projetos pessoais reunidas por área, incluindo Express, jQuery, NHibernate, Supabase e ferramentas de testes e entrega.
+- Participação de IA descrita nos cases e créditos, sem ressalvas repetidas sobre as skills. Interesse em IA redigido como integração de LLMs em aplicações.
+- E-mail público incorporado ao contato; metadados e nova imagem de compartilhamento alinhados ao perfil.
+- Build, TypeScript, dois testes de rotas e 90 referências locais aprovados. Conferência no navegador em desktop e celular, incluindo largura mínima de 320 pixels, sem rolagem horizontal.
+- Capturas da revisão em `work/qa/2026-11-01/`. Não houve execução em aparelho físico ou auditoria por leitor de tela.

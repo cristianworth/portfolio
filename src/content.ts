@@ -1,8 +1,41 @@
 export const profile = {
   name: 'Cristian Weissmantel',
+  role: 'Desenvolvedor Pleno',
+  company: 'LG lugar de gente',
+  email: 'cristianweissmantel@gmail.com',
   github: 'https://github.com/cristianworth',
   linkedin: 'https://www.linkedin.com/in/cristian-weissmantel/',
 };
+
+export const stackGroups = [
+  {
+    name: 'Backend',
+    technologies: ['C#', '.NET', 'ASP.NET MVC', 'ASP.NET Core', 'Node.js', 'Express'],
+  },
+  {
+    name: 'Frontend',
+    technologies: ['JavaScript', 'TypeScript', 'React', 'HTML', 'CSS', 'jQuery', 'Vite'],
+  },
+  {
+    name: 'Dados e persistência',
+    technologies: ['SQL Server', 'PostgreSQL', 'SQLite', 'IndexedDB', 'NHibernate', 'Supabase'],
+  },
+  {
+    name: 'Ferramentas e qualidade',
+    technologies: [
+      'Git',
+      'GitHub',
+      'SVN',
+      'GitHub Actions',
+      'TeamCity',
+      'Redmine',
+      'Kibana',
+      'NUnit',
+      'Vitest',
+      'Playwright',
+    ],
+  },
+];
 
 export type Project = {
   id: string;
@@ -28,7 +61,7 @@ export const projects: Project[] = [
     name: 'Nextage Class',
     category: 'Organização de aulas',
     status: 'Demo pública • piloto em desenvolvimento',
-    description: 'Uma agenda que conecta cada aula à continuidade do aluno.',
+    description: 'Agenda e acompanhamento de aulas particulares.',
     focus:
       'Planejamento, registro pedagógico e pedidos de horário para professores particulares de idiomas.',
     technologies: ['React', 'TypeScript', 'ASP.NET Core no piloto', 'PostgreSQL no piloto'],
@@ -47,7 +80,7 @@ export const projects: Project[] = [
     name: 'Worklog for Redmine',
     category: 'Rotina de trabalho',
     status: 'Demo pública com envio simulado',
-    description: 'Horas organizadas. Envio consciente. Histórico preservado.',
+    description: 'Rascunhos de horas e revisão de envios ao Redmine.',
     focus:
       'Recompor vários dias de trabalho, conferir os totais e revisar apontamentos antes do envio ao Redmine.',
     technologies: ['React', 'TypeScript', 'Node.js no modo local', 'SQLite no modo local'],
@@ -66,7 +99,7 @@ export const projects: Project[] = [
     name: 'Fitness Lab',
     category: 'Treinos e alimentação',
     status: 'Demo pública com dados fictícios',
-    description: 'Treinos, alimentação e evolução no mesmo diário.',
+    description: 'Diário de treinos e alimentação com histórico.',
     focus:
       'Sessões retomáveis, histórico com contexto e backup dos registros armazenados no navegador.',
     technologies: ['React', 'TypeScript', 'IndexedDB'],
@@ -84,7 +117,7 @@ export const projects: Project[] = [
     name: 'Gacha Management',
     category: 'Rotinas de jogos',
     status: 'Aplicação com perfis compartilhados',
-    description: 'Calendários e recorrências a serviço da rotina.',
+    description: 'Organização de tarefas e eventos em jogos.',
     focus:
       'Stamina, tarefas, eventos e banners por perfil, preservando escolhas manuais durante a sincronização.',
     technologies: ['JavaScript', 'HTML e CSS', 'PostgreSQL / Supabase'],
@@ -101,7 +134,7 @@ export const projects: Project[] = [
     name: 'Weather Lab',
     category: 'Dados e visualização',
     status: 'Aplicação pública com dados reais',
-    description: 'Previsão do tempo com contexto para o dia.',
+    description: 'Previsão do tempo por localidade.',
     focus: 'Busca por localidade, favoritos e gráficos horários de temperatura e chuva.',
     technologies: ['React', 'TypeScript', 'Open-Meteo'],
     code: 'https://github.com/cristianworth/weather-lab',
@@ -132,9 +165,9 @@ export const cases: CaseStudy[] = [
   {
     slug: 'nextage-class',
     projectId: 'nextage',
-    title: 'Uma aula termina. A continuidade fica.',
+    title: 'Agenda e acompanhamento pedagógico',
     introduction:
-      'Da agenda ao próximo encontro: transformar a rotina de uma professora particular em um fluxo de acompanhamento pedagógico.',
+      'Agenda, preparação e registro de aulas individuais, com histórico pedagógico e consulta do aluno.',
     context:
       'Para uma professora particular de idiomas, o horário é apenas uma parte da aula. É preciso recuperar o que foi trabalhado, conferir o homework, preparar materiais e decidir como continuar. O Nextage Class reúne esse contexto por aluno e inclui uma consulta simplificada para ele.',
     flow: [
@@ -199,7 +232,7 @@ export const cases: CaseStudy[] = [
         title: 'Minha participação e a da IA',
         paragraphs: [
           'Guio o produto, defino prioridades, acompanho decisões e valido os resultados com uma professora real. A rotina dela dá referência às regras e aos fluxos.',
-          'A IA participa da implementação e das verificações. React, TypeScript e ASP.NET Core fazem parte do meu aprofundamento com assistência de IA; sua presença no projeto não representa domínio equivalente em toda a stack. O Nextage não tem funcionalidades de IA.',
+          'O desenvolvimento utiliza React, TypeScript e ASP.NET Core, com apoio de IA na implementação e nas verificações. O Nextage não tem funcionalidades de IA.',
         ],
       },
     ],
@@ -237,7 +270,7 @@ export const cases: CaseStudy[] = [
   {
     slug: 'worklog',
     projectId: 'worklog',
-    title: 'Salvar o trabalho. Revisar o envio.',
+    title: 'Apontamentos de horas e envio ao Redmine',
     introduction:
       'Um fluxo para recompor apontamentos de vários dias e lidar com o que acontece quando um envio ao Redmine termina pela metade.',
     context:
@@ -310,7 +343,7 @@ export const cases: CaseStudy[] = [
         title: 'Minha participação e a da IA',
         paragraphs: [
           'O projeto parte da minha rotina de apontamentos. Defini o fluxo, as restrições de uso e validei os resultados, com assistência de IA no desenvolvimento.',
-          'A implementação reúne ferramentas que estou aprofundando nos projetos pessoais. Os documentos registram as decisões e seus limites; não atribuo a mim autoria individual de toda a implementação ou domínio consolidado de toda a stack.',
+          'O projeto utiliza React e TypeScript na interface, com Node.js, Express e SQLite no modo local. A documentação registra as decisões técnicas e os limites da integração.',
         ],
       },
     ],

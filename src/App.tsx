@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { cases, profile, projects, type CaseStudy, type Project } from './content';
+import { cases, profile, projects, stackGroups, type CaseStudy, type Project } from './content';
 
 const base = import.meta.env.BASE_URL;
 export const asset = (path: string) => `${base}assets/${path}`;
@@ -142,23 +142,22 @@ function Hero() {
         <div className="hero-copy">
           <p className="intro-label">
             <span aria-hidden="true" />
-            Desenvolvedor de software
+            {profile.role}
           </p>
-          <h1 id="hero-title">
-            Backend
+          <h1 id="hero-title" className="hero-name">
+            Cristian
             <br />
-            como base.
-            <br />
-            <span>
-              Produtos
-              <br />
-              como prática.
-            </span>
+            Weissmantel
           </h1>
           <p className="hero-description">
-            Sou Cristian Weissmantel. Trabalho com software corporativo em <strong>C#/.NET</strong>{' '}
-            e transformo problemas da rotina em aplicações.
+            Experiência em <strong>C#/.NET</strong>, desenvolvimento web e bancos de dados
+            relacionais. Também utilizo React, TypeScript e Node.js nos meus projetos.
           </p>
+          <ul className="hero-stack" aria-label="Principais tecnologias">
+            {['C# / .NET', 'React', 'TypeScript', 'SQL Server', 'PostgreSQL'].map((technology) => (
+              <li key={technology}>{technology}</li>
+            ))}
+          </ul>
           <div className="hero-actions">
             <a className="button button-cyan" href="#projetos">
               Explorar projetos <Arrow />
@@ -167,13 +166,11 @@ function Hero() {
               GitHub <CodeIcon />
             </a>
           </div>
-          <p className="hero-footnote">
-            Experiência em backend. Curiosidade para o que vem depois.
-          </p>
+          <p className="hero-footnote">Atualmente na {profile.company}.</p>
         </div>
         <div className="hero-showcase">
           <div className="showcase-caption">
-            <span>Do problema ao produto</span>
+            <span>Projetos em destaque</span>
             <span aria-hidden="true">0{selected + 1} / 02</span>
           </div>
           <a
@@ -319,21 +316,17 @@ function Projects() {
       <div className="container">
         <div className="section-heading">
           <div>
-            <p className="section-kicker">Projetos selecionados</p>
-            <h2 id="projects-title">
-              Problemas reais.
-              <br />
-              <span>Decisões que dá para conhecer.</span>
-            </h2>
+            <p className="section-kicker">Portfólio</p>
+            <h2 id="projects-title">Projetos em destaque</h2>
           </div>
-          <p>Experimente os produtos e explore o raciocínio por trás da implementação.</p>
+          <p>Conheça as aplicações, experimente as demos e leia as decisões técnicas nos cases.</p>
         </div>
         {projects.slice(0, 2).map((project, i) => (
           <FeaturedProject key={project.id} project={project} number={`0${i + 1}`} />
         ))}
         <div className="more-heading">
-          <h2>Outros recortes da prática</h2>
-          <p>Persistência, recorrência e integração com dados.</p>
+          <h2>Outros projetos</h2>
+          <p>Treinos, rotinas de jogos e previsão do tempo.</p>
         </div>
         <div className="more-grid">
           {projects.slice(2).map((project) => (
@@ -365,19 +358,19 @@ function Projects() {
 const experience = [
   {
     number: '01',
-    title: 'Regras de negócio e evolução',
+    title: 'Aplicações web',
     text: 'Manutenção evolutiva e corretiva de software corporativo. Trabalho com serviços e regras de negócio em C#/.NET Framework, com participação na interface em ASP.NET MVC, Razor e JavaScript/jQuery.',
     tools: 'C# / .NET Framework / ASP.NET MVC',
   },
   {
     number: '02',
-    title: 'Investigar antes de corrigir',
+    title: 'Dados e manutenção',
     text: 'Reprodução local, debugger, consultas SQL e logs no Kibana para entender defeitos. Persistência com NHibernate e SQL Server, respeitando os contratos entre módulos.',
     tools: 'SQL Server / NHibernate / Kibana',
   },
   {
     number: '03',
-    title: 'Qualidade e entrega no contexto real',
+    title: 'Testes e entrega',
     text: 'Execução de testes com NUnit e escrita pontual de testes de regras, validação manual estruturada, versionamento com SVN e rastreabilidade no Redmine. Uso da CI existente com TeamCity para conferir as entregas.',
     tools: 'NUnit / SVN / Redmine / uso de TeamCity',
   },
@@ -395,14 +388,14 @@ function Experience() {
           <div>
             <p className="section-kicker">Experiência profissional</p>
             <h2 id="experience-title">
-              O código precisa fazer sentido
+              {profile.role}
               <br />
-              <span>no sistema que já existe.</span>
+              <span>{profile.company}</span>
             </h2>
           </div>
           <p>
-            Minha base está na evolução de software corporativo, no diagnóstico de defeitos e na
-            tradução de requisitos em soluções.
+            Atuação na manutenção e evolução de aplicações web, com serviços, regras de negócio,
+            persistência e análise de requisitos.
           </p>
         </div>
         <div className="experience-list">
@@ -435,47 +428,40 @@ function About() {
         <div className="about-grid">
           <div>
             <p className="section-kicker">Sobre mim</p>
-            <h2 id="about-title">
-              Backend no repertório.
-              <br />
-              <span>Aprendizado em movimento.</span>
-            </h2>
+            <h2 id="about-title">Desenvolvimento web e software corporativo</h2>
           </div>
           <div className="about-copy">
             <p>
-              Gosto de entender o fluxo, encontrar a causa e construir uma solução que caiba no
-              problema. Minha base é C#, JavaScript, HTML e CSS, com mais familiaridade em backend e
-              lógica.
+              Sou desenvolvedor pleno na LG lugar de gente. Tenho experiência com C#/.NET,
+              aplicações web e bancos de dados relacionais.
             </p>
             <p>
-              Nos projetos pessoais, aprofundo ASP.NET Core, React e TypeScript com assistência de
-              IA. Defino prioridades e acompanho decisões e validações. Quero conseguir explicar o
-              que construo, respeitando o que ainda estou aprendendo.
+              Trabalho com ASP.NET MVC, SQL Server e NHibernate e também utilizo ASP.NET Core,
+              React, TypeScript e Node.js nos meus projetos. Minha experiência reúne manutenção de
+              aplicações e desenvolvimento de ferramentas para aulas, apontamentos de horas e
+              rotinas pessoais.
             </p>
             <p>
-              Minha próxima direção é construir aplicações com LLMs e avaliar suas respostas. RAG e
-              MCP são interesses de estudo.
+              No dia a dia, utilizo Git/SVN, testes automatizados e integração contínua. Tenho
+              interesse em inteligência artificial aplicada ao desenvolvimento de software e
+              integração de LLMs em aplicações.
             </p>
           </div>
         </div>
-        <div className="context-grid">
-          <div>
-            <span className="context-index">Prática profissional</span>
-            <h3>Software corporativo</h3>
-            <p>C#/.NET Framework, ASP.NET MVC/Razor, JavaScript/jQuery, SQL Server e NHibernate.</p>
-          </div>
-          <div>
-            <span className="context-index">Projetos com assistência de IA</span>
-            <h3>Aplicações modernas</h3>
-            <p>
-              ASP.NET Core, React, TypeScript, Node.js, PostgreSQL, SQLite, IndexedDB, Vite e GitHub
-              Actions.
-            </p>
-          </div>
-          <div>
-            <span className="context-index">Direção de aprendizado</span>
-            <h3>Aplicações com IA</h3>
-            <p>LLMs e avaliação de respostas. RAG e MCP como próximos temas de estudo.</p>
+        <div id="tecnologias" className="stack-section">
+          <h2>Tecnologias</h2>
+          <p>Tecnologias e ferramentas que utilizo no trabalho e nos projetos.</p>
+          <div className="stack-grid">
+            {stackGroups.map((group) => (
+              <article key={group.name}>
+                <h3>{group.name}</h3>
+                <ul className="stack-tags" aria-label={group.name}>
+                  {group.technologies.map((technology) => (
+                    <li key={technology}>{technology}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </div>
       </div>
@@ -488,15 +474,11 @@ function Contact() {
     <section id="contato" className="contact-section" aria-labelledby="contact-title">
       <div className="container contact-inner">
         <div>
-          <p className="section-kicker">Contato</p>
-          <h2 id="contact-title">
-            Vamos falar sobre
-            <br />
-            <span>o próximo problema?</span>
-          </h2>
+          <h2 id="contact-title">Entre em contato</h2>
           <p>Para oportunidades profissionais ou uma conversa sobre os projetos.</p>
         </div>
         <div className="contact-links">
+          <ExternalLink href={`mailto:${profile.email}`}>Enviar e-mail</ExternalLink>
           <ExternalLink href={profile.linkedin}>Conversar no LinkedIn</ExternalLink>
           <ExternalLink href={profile.github}>Conhecer meu GitHub</ExternalLink>
         </div>
@@ -510,11 +492,11 @@ function Footer() {
     <footer className="site-footer">
       <div className="container footer-inner">
         <a className="footer-name" href={base}>
-          Cristian Weissmantel<span>Backend como base. Produtos como prática.</span>
+          Cristian Weissmantel<span>{profile.role} · C#/.NET, React e TypeScript</span>
         </a>
         <div>
           <a href={`${base}creditos/`}>Créditos e fontes</a>
-          <span>© 2026 · v0.1.0</span>
+          <span>© 2026 · v0.1.1</span>
         </div>
       </div>
     </footer>
@@ -574,7 +556,7 @@ function CasePage({ study }: { study: CaseStudy }) {
           </figure>
           <section id="fluxo">
             <p className="section-kicker">Fluxo principal</p>
-            <h2>Um percurso completo</h2>
+            <h2>Fluxo de uso</h2>
             <ol className="flow-list">
               {study.flow.map((step, index) => (
                 <li key={step.title}>
@@ -619,7 +601,7 @@ function CasePage({ study }: { study: CaseStudy }) {
           ))}
           <section id="evidencias" className="evidence-section">
             <p className="section-kicker">Para aprofundar</p>
-            <h2>As fontes por trás do case</h2>
+            <h2>Documentação e evidências</h2>
             <p>
               Documentação pública dos projetos. Os estágios descritos foram conferidos em 29 de
               outubro de 2026.
@@ -702,9 +684,9 @@ function Credits() {
         omitidos.
       </p>
       <p>
-        Este site foi desenvolvido com assistência de IA. As tecnologias em projetos pessoais são
-        apresentadas como prática e aprendizado, sem equivalência automática com domínio
-        profissional.
+        Este site foi desenvolvido com assistência de IA. As tecnologias apresentadas reúnem a
+        experiência profissional e os projetos pessoais de Cristian. Os cases descrevem sua
+        participação e o apoio da IA em cada projeto.
       </p>
       <ExternalLink className="text-link" href="https://github.com/cristianworth/portfolio">
         Código, licença e documentação do portfólio

@@ -6,7 +6,15 @@ Conferência inicial: 29/10/2026. Relatos históricos foram cruzados com os READ
 
 O inventário fornecido por Cristian e os chats “Planejar evolução do portfólio” e “Planejar projeto de tracking” sustentam C#/.NET Framework, ASP.NET MVC/Razor, JavaScript/jQuery, SQL Server, NHibernate, debugger, Kibana, NUnit, SVN, Redmine e uso da CI com TeamCity.
 
-O site não publica o inventário bruto, transcrições, nomes de clientes, chamados, código proprietário, resultados pendentes ou documentos de trabalho. Execução recorrente de testes e escrita pontual são distintas; uso da CI não é configuração. Datas de carreira, senioridade, formação e resultados não confirmados foram omitidos. React/TypeScript e ASP.NET Core são apresentados no contexto pessoal com assistência de IA; LLMs/avaliação são direção de estudo, RAG/MCP interesses.
+O site não publica o inventário bruto, transcrições, nomes de clientes, chamados, código proprietário, resultados pendentes ou documentos de trabalho. Execução recorrente de testes e escrita pontual são distintas; uso da CI não é configuração. Datas de carreira, formação e resultados não confirmados continuam omitidos.
+
+## Alinhamento de apresentação — 01/11/2026
+
+A conversa “cristianworth readme”, consultada nesta revisão, confirma o cargo **Desenvolvedor Pleno**, a atuação na **LG lugar de gente**, o contato público por e-mail e a inclusão das tecnologias dos projetos pessoais nas skills. O README atual é a referência para os quatro grupos: Backend, Frontend, Dados e persistência, Ferramentas e qualidade.
+
+A apresentação usa nome, cargo e tecnologias, com descrições diretas. Frases de campanha foram retiradas da abertura, títulos, rodapé e compartilhamento. As stacks são agrupadas por área, reunindo trabalho e projetos pessoais; não são tratadas como habilidades menores por terem sido usadas com apoio de IA. A participação humana e a assistência de IA continuam descritas de forma objetiva nos cases e créditos, sem ressalvas repetidas sobre capacidade de programar.
+
+O interesse declarado é **inteligência artificial aplicada ao desenvolvimento de software e integração de LLMs em aplicações**. RAG e MCP não foram promovidos a experiência adquirida.
 
 ## Projetos
 

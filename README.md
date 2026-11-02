@@ -1,6 +1,6 @@
 # Cristian Weissmantel · Portfolio
 
-Portfólio pessoal com experiência em backend .NET, projetos e decisões concretas de engenharia. React, TypeScript e Vite, com páginas estáticas pré-renderizadas e publicação gratuita no GitHub Pages.
+Portfólio de Cristian Weissmantel, Desenvolvedor Pleno. Apresentação profissional, tecnologias por área, projetos, demos e cases. React, TypeScript e Vite, com páginas estáticas pré-renderizadas e publicação gratuita no GitHub Pages.
 
 **[Abrir o site](https://cristianworth.github.io/portfolio/)** · [Nextage Class: case](https://cristianworth.github.io/portfolio/cases/nextage-class/) · [Worklog: case](https://cristianworth.github.io/portfolio/cases/worklog/)
 
@@ -26,7 +26,7 @@ O build verifica TypeScript, gera os assets do cliente e renderiza HTML real par
 
 ## Atualizar
 
-- Projetos, estágios, URLs e textos dos cases: `src/content.ts`.
+- Perfil, grupos de stack, projetos, estágios, URLs e textos dos cases: `src/content.ts`.
 - Experiência, apresentação, contato e créditos: `src/App.tsx`.
 - Visual e responsividade: `src/styles.css`.
 - Metadados gerais: `index.html`. Metadados por página e sitemap: `scripts/generate-pages.mjs`.
@@ -38,6 +38,6 @@ Leia o [guia de manutenção](docs/maintenance.md) antes de adicionar uma demo o
 
 O workflow `.github/workflows/pages.yml` compila, verifica e publica somente `dist` em cada push para `main`. Pages precisa estar configurado com source **GitHub Actions**. Configuração baseada nos guias oficiais de [Vite](https://vite.dev/guide/static-deploy.html#github-pages) e [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-github-actions-for-github-pages).
 
-As demos dos projetos têm suas próprias garantias e estágios. Nextage demonstra dados fictícios e é separado do piloto com servidor; Worklog simula o envio; Fitness usa um banco demonstrativo isolado. Essas demos e Weather têm URLs públicas verificadas. Gacha Cloud tem perfis compartilhados e não é oferecido como demo descartável; OCR é laboratório local. A assistência de IA está declarada, e a prática profissional é separada do aprendizado em projetos.
+As demos dos projetos têm suas próprias garantias e estágios. Nextage demonstra dados fictícios e é separado do piloto com servidor; Worklog simula o envio; Fitness usa um banco demonstrativo isolado. Essas demos e Weather têm URLs públicas verificadas. Gacha Cloud tem perfis compartilhados e não é oferecido como demo descartável; OCR é laboratório local. As tecnologias reúnem experiência profissional e projetos pessoais. Os cases descrevem a participação de Cristian e o apoio da IA.
 
 Código e conteúdo originais sob [MIT](LICENSE). Materiais de terceiros em [NOTICE.md](NOTICE.md). Este site foi implementado com assistência de IA a partir do escopo e das evidências fornecidas por Cristian.

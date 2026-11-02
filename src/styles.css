@@ -255,10 +255,10 @@ section[id] {
 }
 .hero h1 {
   color: white;
-  font-size: clamp(3.6rem, 5.5vw, 5.3rem);
-  letter-spacing: -4px;
+  font-size: clamp(2.5rem, 4.4vw, 4.35rem);
+  letter-spacing: -2.5px;
   font-weight: 750;
-  line-height: 1.03;
+  line-height: 1.12;
 }
 .hero h1 > span {
   color: var(--cyan);
@@ -272,6 +272,20 @@ section[id] {
 .hero-description strong {
   color: white;
   font-weight: 600;
+}
+.hero-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+  max-width: 440px;
+}
+.hero-stack li {
+  border: 1px solid #577497;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: #c7edf2;
+  font-size: 0.77rem;
 }
 .hero-actions {
   display: flex;
@@ -812,34 +826,46 @@ section[id] {
   font-size: 0.98rem;
   margin-bottom: 20px;
 }
-.context-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 38px;
-  margin-top: 52px;
+.stack-section {
+  margin-top: 48px;
+  border-top: 1px solid var(--line);
+  padding-top: 38px;
 }
-.context-grid > div {
-  border-left: 3px solid #cac9ee;
-  padding-left: 22px;
+.stack-section > h2 {
+  font-size: 1.8rem;
 }
-.context-grid > div:first-child {
-  border-color: #2f587f;
-}
-.context-grid > div:last-child {
-  border-color: #4aabba;
-}
-.context-index {
-  font-size: 0.7rem;
-  color: #5b6a80;
-}
-.context-grid h3 {
-  font-size: 1.15rem;
-  margin-top: 10px;
-  margin-bottom: 12px;
-}
-.context-grid p {
-  font-size: 0.83rem;
+.stack-section > p {
   color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+.stack-grid article {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+.stack-grid h3 {
+  font-size: 1.12rem;
+  letter-spacing: -0.3px;
+}
+.stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+.stack-tags li {
+  background: #e9eef7;
+  color: #344d70;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
 }
 .contact-section {
   background: var(--indigo);
@@ -1196,7 +1222,7 @@ section[id] {
     gap: 85px;
   }
   .hero h1 {
-    font-size: 5.7rem;
+    font-size: 4.5rem;
   }
   .hero-description {
     max-width: 440px;
@@ -1211,8 +1237,8 @@ section[id] {
     padding-top: 60px;
   }
   .hero h1 {
-    font-size: 4rem;
-    letter-spacing: -3px;
+    font-size: 3rem;
+    letter-spacing: -2px;
   }
   .hero-description {
     font-size: 0.95rem;
@@ -1282,8 +1308,8 @@ section[id] {
     grid-template-columns: 1fr 1fr;
   }
   .hero h1 {
-    font-size: 3.35rem;
-    letter-spacing: -2.5px;
+    font-size: 2.25rem;
+    letter-spacing: -1.5px;
   }
   .hero-actions {
     gap: 20px;
@@ -1423,18 +1449,6 @@ section[id] {
     grid-template-columns: 1fr;
     gap: 32px;
   }
-  .context-grid {
-    gap: 22px;
-  }
-  .context-grid > div {
-    padding-left: 15px;
-  }
-  .context-grid h3 {
-    font-size: 1rem;
-  }
-  .context-grid p {
-    font-size: 0.76rem;
-  }
   .contact-inner {
     gap: 30px;
   }
@@ -1472,6 +1486,16 @@ section[id] {
   }
 }
 @media (max-width: 600px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .stack-grid article {
+    padding: 22px 20px;
+  }
+  .stack-section > h2 {
+    font-size: 1.65rem;
+  }
   :root {
     scroll-padding-top: 25px;
   }
@@ -1539,9 +1563,9 @@ section[id] {
     margin-bottom: 24px;
   }
   .hero h1 {
-    font-size: clamp(3.1rem, 12vw, 4.5rem);
-    letter-spacing: -2.8px;
-    line-height: 1.055;
+    font-size: clamp(2.1rem, 9.4vw, 3.3rem);
+    letter-spacing: -1.5px;
+    line-height: 1.12;
   }
   .hero-description {
     font-size: 0.97rem;
@@ -1777,25 +1801,6 @@ section[id] {
   .about-copy p {
     font-size: 0.93rem;
     margin-bottom: 17px;
-  }
-  .context-grid {
-    grid-template-columns: 1fr;
-    gap: 26px;
-    margin-top: 30px;
-  }
-  .context-grid > div {
-    padding-left: 20px;
-  }
-  .context-index {
-    font-size: 0.72rem;
-  }
-  .context-grid h3 {
-    font-size: 1.12rem;
-    margin-top: 8px;
-    margin-bottom: 9px;
-  }
-  .context-grid p {
-    font-size: 0.87rem;
   }
   .contact-section {
     padding-block: 51px;
