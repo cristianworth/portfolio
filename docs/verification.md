@@ -46,3 +46,12 @@ Capturas da revisão local ficam em `work/qa/` (ignoradas pelo Git): desktop, ce
 - E-mail público incorporado ao contato; metadados e nova imagem de compartilhamento alinhados ao perfil.
 - Build, TypeScript, dois testes de rotas e 90 referências locais aprovados. Conferência no navegador em desktop e celular, incluindo largura mínima de 320 pixels, sem rolagem horizontal.
 - Capturas da revisão em `work/qa/2026-11-01/`. Não houve execução em aparelho físico ou auditoria por leitor de tela.
+
+## Acessos aos projetos — 02/11/2026
+
+- Implementação da opção C escolhida: demo e código juntos sob a captura, com ícone do GitHub e botões ajustados ao conteúdo.
+- Botão da demo com aproximadamente 173 px no cabeçalho desktop conferido; sem expansão para ocupar a barra inteira.
+- Cabeçalho dos dois cases com imagem do produto e acessos próprios. Cards complementares usam o mesmo componente, mantendo apenas o código quando não há demo isolada.
+- Links de demo/código sinalizam abertura em nova aba; foco visível preservado.
+- Build, TypeScript, testes de rotas e cinco páginas pré-renderizadas aprovados. Verificação de 90 referências locais.
+- Conferência em 1440 e 320 pixels, sem rolagem horizontal ou botões cortados. Captura em `work/qa/2026-11-02/delivery-1-case.jpg`.

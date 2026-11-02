@@ -14,4 +14,4 @@ The original captures were resized and converted to WebP, without altering the p
 
 Manrope, by Mikhail Sharanda, and DM Sans, by Colophon Foundry and contributors, are self-hosted under SIL Open Font License. Full license notices are shipped in `public/licenses/` and the font packages.
 
-The portfolio monogram, SVG interface icons and sharing graphic are original assets. React, Vite and other dependencies retain their package licenses.
+The portfolio monogram, generic SVG interface icons and sharing graphic are original assets. The GitHub mark identifies repository links and belongs to GitHub; it is not covered by this portfolio's MIT grant. React, Vite and other dependencies retain their package licenses.

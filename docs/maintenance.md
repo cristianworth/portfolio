@@ -12,6 +12,8 @@ Para incluir uma demo:
 4. Acrescente `demo` com a URL HTTPS e atualize `status` e `demoNote`. O link aparece automaticamente. Sem URL verificada, omita `demo`: o código e o case continuam acessíveis.
 5. Releia o case se o estágio tiver mudado. Não transforme publicação de demo em conclusão do piloto.
 
+O componente `ProjectPreview` agrupa captura, demo e código. Seus botões têm largura pelo conteúdo; não use `flex: 1` na ação principal para preencher a barra. Os acessos externos abrem em nova aba, identificada no nome acessível. Na falta de `demo`, somente o código é exibido.
+
 Experiência e apresentação ficam em `src/App.tsx`. Cargo, empresa, contato e os quatro grupos de tecnologias (`stackGroups`) ficam em `src/content.ts`. As stacks reúnem experiência profissional e projetos pessoais. Use descrições diretas, sem slogans e sem transformar o uso de IA em ressalvas repetidas sobre as habilidades. Evite datas, métricas e responsabilidades sem confirmação.
 
 ## Capturas

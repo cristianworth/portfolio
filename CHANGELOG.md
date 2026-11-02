@@ -2,6 +2,12 @@
 
 Use semantic versioning for a coherent release, rather than incrementing for each commit. Keep this file, package.json, package-lock.json and the displayed footer version consistent. Ask Cristian before a later release/version change unless already authorized in the task.
 
+## 0.1.2 — 2026-11-02
+
+- Group compact demo and source-code actions with project captures on the homepage and case headers.
+- Keep demo buttons content-sized and use the GitHub symbol for repository links.
+- Preserve usable actions at narrow widths and explicit new-tab labels.
+
 ## 0.1.1 — 2026-11-01
 
 - Replace campaign-style slogans with name, developer role and direct project descriptions.

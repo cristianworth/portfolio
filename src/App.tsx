@@ -33,6 +33,14 @@ function CodeIcon() {
   );
 }
 
+function GitHubIcon() {
+  return (
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 .297C5.37.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.468-2.382 1.235-3.222-.135-.303-.54-1.524.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.404c1.02.005 2.04.138 3 .404 2.28-1.552 3.285-1.23 3.285-1.23.645 1.652.24 2.873.12 3.176.765.84 1.23 1.912 1.23 3.222 0 4.61-2.805 5.625-5.475 5.922.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </svg>
+  );
+}
+
 function ExternalLink({
   href,
   children,
@@ -130,6 +138,49 @@ function ProjectImage({
       fetchPriority={priority ? 'high' : 'auto'}
       decoding="async"
     />
+  );
+}
+
+function ProjectPreview({ project, priority = false }: { project: Project; priority?: boolean }) {
+  return (
+    <div className={`product-preview ${project.id}`}>
+      <a
+        className="preview-image"
+        href={project.demo ?? project.code}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${project.demo ? 'Experimentar' : 'Conhecer o código de'} ${project.name} (nova aba)`}
+      >
+        <ProjectImage project={project} priority={priority} />
+      </a>
+      <div
+        className="preview-actions"
+        role="group"
+        aria-label={`Acessos ao projeto ${project.name}`}
+      >
+        {project.demo && (
+          <a
+            className="preview-demo"
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Experimentar ${project.id === 'weather' ? 'aplicação' : 'demo'} ${project.name} (nova aba)`}
+          >
+            Experimentar {project.id === 'weather' ? 'aplicação' : 'demo'} <Arrow diagonal />
+          </a>
+        )}
+        <a
+          className="preview-code"
+          href={project.code}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Ver código de ${project.name} no GitHub (nova aba)`}
+        >
+          <GitHubIcon />
+          Ver código
+        </a>
+      </div>
+    </div>
   );
 }
 
@@ -234,9 +285,10 @@ function ProjectActions({ project }: { project: Project }) {
           Experimentar {project.id === 'weather' ? 'aplicação' : 'demo'}
         </ExternalLink>
       )}
-      <ExternalLink className="text-link code-link" href={project.code}>
+      <a className="text-link code-link" href={project.code}>
+        <GitHubIcon />
         Ver código
-      </ExternalLink>
+      </a>
     </div>
   );
 }
@@ -249,13 +301,7 @@ function FeaturedProject({ project, number }: { project: Project; number: string
           <span>{number}</span>
           <span>{project.category}</span>
         </div>
-        <a
-          className="product-capture"
-          href={caseUrl(project.caseSlug!)}
-          aria-label={`Ler case ${project.name}`}
-        >
-          <ProjectImage project={project} />
-        </a>
+        <ProjectPreview project={project} />
         <span className="capture-label">Interface do produto / dados fictícios</span>
       </div>
       <div className="project-copy">
@@ -271,7 +317,11 @@ function FeaturedProject({ project, number }: { project: Project; number: string
             <li key={tech}>{tech}</li>
           ))}
         </ul>
-        <ProjectActions project={project} />
+        <div className="project-actions">
+          <a className="button button-ink" href={caseUrl(project.caseSlug!)}>
+            Ler o case <Arrow />
+          </a>
+        </div>
         <p className="demo-note">{project.demoNote}</p>
       </div>
     </article>
@@ -281,13 +331,7 @@ function FeaturedProject({ project, number }: { project: Project; number: string
 function MoreProject({ project }: { project: Project }) {
   return (
     <article className={`more-project ${project.id}`} aria-labelledby={`title-${project.id}`}>
-      <a
-        className="mini-capture"
-        href={project.code}
-        aria-label={`Conhecer o código de ${project.name}`}
-      >
-        <ProjectImage project={project} />
-      </a>
+      <ProjectPreview project={project} />
       <div className="more-project-copy">
         <p className="small-label">{project.category}</p>
         <h3 id={`title-${project.id}`}>{project.name}</h3>
@@ -299,7 +343,6 @@ function MoreProject({ project }: { project: Project }) {
           ))}
         </ul>
         <p className="compact-status">{project.status}</p>
-        <ProjectActions project={project} />
         <p className="demo-note">{project.demoNote}</p>
       </div>
     </article>
@@ -496,7 +539,7 @@ function Footer() {
         </a>
         <div>
           <a href={`${base}creditos/`}>Créditos e fontes</a>
-          <span>© 2026 · v0.1.1</span>
+          <span>© 2026 · v0.1.2</span>
         </div>
       </div>
     </footer>
@@ -509,23 +552,25 @@ function CasePage({ study }: { study: CaseStudy }) {
   return (
     <>
       <section className={`case-hero ${project.id}`}>
-        <div className="container">
-          <a className="back-link" href={`${base}#projetos`}>
-            <span aria-hidden="true">←</span> Todos os projetos
-          </a>
-          <p className="section-kicker">Case / {project.name}</p>
-          <h1>{study.title}</h1>
-          <p className="case-introduction">{study.introduction}</p>
-          <div className="case-summary">
-            <p>{project.status}</p>
-            <ul className="tech-list">
-              {project.technologies.map((tech) => (
-                <li key={tech}>{tech}</li>
-              ))}
-            </ul>
+        <div className="container case-header-grid">
+          <div className="case-header-copy">
+            <a className="back-link" href={`${base}#projetos`}>
+              <span aria-hidden="true">←</span> Todos os projetos
+            </a>
+            <p className="section-kicker">Case / {project.name}</p>
+            <h1>{study.title}</h1>
+            <p className="case-introduction">{study.introduction}</p>
+            <div className="case-summary">
+              <p>{project.status}</p>
+              <ul className="tech-list">
+                {project.technologies.map((tech) => (
+                  <li key={tech}>{tech}</li>
+                ))}
+              </ul>
+            </div>
+            <p className="demo-note">{project.demoNote}</p>
           </div>
-          <ProjectActions project={{ ...project, caseSlug: undefined }} />
-          <p className="demo-note">{project.demoNote}</p>
+          <ProjectPreview project={project} priority />
         </div>
       </section>
       <div className="container case-layout">
@@ -674,7 +719,7 @@ function Credits() {
       <p>
         Manrope, de Mikhail Sharanda, e DM Sans, de Colophon Foundry e colaboradores, distribuídas
         sob SIL Open Font License e hospedadas junto do site. Ícones e monograma desenhados em SVG
-        para este portfólio.
+        para este portfólio. O símbolo do GitHub identifica os repositórios e preserva os direitos da marca.
       </p>
       <h2>Conteúdo e participação</h2>
       <p>
