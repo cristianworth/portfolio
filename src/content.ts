@@ -165,7 +165,7 @@ export const cases: CaseStudy[] = [
   {
     slug: 'nextage-class',
     projectId: 'nextage',
-    title: 'Agenda e acompanhamento pedagógico',
+    title: 'Agenda e histórico de aulas',
     introduction:
       'Agenda, preparação e registro de aulas individuais, com histórico pedagógico e consulta do aluno.',
     context:
@@ -270,7 +270,7 @@ export const cases: CaseStudy[] = [
   {
     slug: 'worklog',
     projectId: 'worklog',
-    title: 'Apontamentos de horas e envio ao Redmine',
+    title: 'Registro e envio de horas',
     introduction:
       'Um fluxo para recompor apontamentos de vários dias e lidar com o que acontece quando um envio ao Redmine termina pela metade.',
     context:
