@@ -14,6 +14,10 @@ Para incluir uma demo:
 
 O componente `ProjectPreview` agrupa captura, demo e código. Seus botões têm largura pelo conteúdo; não use `flex: 1` na ação principal para preencher a barra. Os acessos externos abrem em nova aba, identificada no nome acessível. Na falta de `demo`, somente o código é exibido.
 
+A ação “Ampliar” abre a captura completa em um `<dialog>` nativo. Preserve o título acessível, o botão de fechar, Escape e retorno do foco. A imagem ampliada só entra na árvore quando solicitada. `facts` em cada case fornece público/origem, participação e versão demonstrada; mantenha o resumo curto e coerente com o texto e a documentação.
+
+O cabeçalho é fixo durante a rolagem. `--header-height` controla sua altura e a compensação das âncoras/índice lateral; ajuste juntos se o cabeçalho mudar. A revisão de 0.2.0 e suas referências estão em `docs/design-review.md`.
+
 Experiência e apresentação ficam em `src/App.tsx`. Cargo, empresa, contato e os quatro grupos de tecnologias (`stackGroups`) ficam em `src/content.ts`. As stacks reúnem experiência profissional e projetos pessoais. Use descrições diretas, sem slogans e sem transformar o uso de IA em ressalvas repetidas sobre as habilidades. Evite datas, métricas e responsabilidades sem confirmação.
 
 ## Capturas

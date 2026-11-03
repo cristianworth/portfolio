@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useId, useRef, useState } from 'react';
 import { cases, profile, projects, stackGroups, type CaseStudy, type Project } from './content';
 
 const base = import.meta.env.BASE_URL;
@@ -142,17 +142,42 @@ function ProjectImage({
 }
 
 function ProjectPreview({ project, priority = false }: { project: Project; priority?: boolean }) {
+  const dialog = useRef<HTMLDialogElement>(null);
+  const [expanded, setExpanded] = useState(false);
+  const titleId = useId();
   return (
     <div className={`product-preview ${project.id}`}>
-      <a
-        className="preview-image"
-        href={project.demo ?? project.code}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`${project.demo ? 'Experimentar' : 'Conhecer o código de'} ${project.name} (nova aba)`}
-      >
-        <ProjectImage project={project} priority={priority} />
-      </a>
+      <div className="preview-surface">
+        <a
+          className="preview-image"
+          href={project.demo ?? project.code}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${project.demo ? 'Experimentar' : 'Conhecer o código de'} ${project.name} (nova aba)`}
+        >
+          <ProjectImage project={project} priority={priority} />
+        </a>
+        <button
+          className="preview-expand"
+          aria-label={`Ampliar captura de ${project.name}`}
+          aria-haspopup="dialog"
+          onClick={() => {
+            setExpanded(true);
+            dialog.current?.showModal();
+          }}
+        >
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          Ampliar
+        </button>
+      </div>
       <div
         className="preview-actions"
         role="group"
@@ -180,6 +205,35 @@ function ProjectPreview({ project, priority = false }: { project: Project; prior
           Ver código
         </a>
       </div>
+      <dialog
+        ref={dialog}
+        className="capture-dialog"
+        aria-labelledby={titleId}
+        onClose={() => setExpanded(false)}
+      >
+        <div className="capture-dialog-header">
+          <div>
+            <h2 id={titleId}>{project.name}</h2>
+            <p>
+              Captura do produto ·{' '}
+              {project.id === 'weather' ? 'dados de previsão' : 'dados demonstrativos'}
+            </p>
+            <a
+              className="capture-original-link"
+              href={asset(`${project.image}-1280.webp`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Abrir imagem original de ${project.name} (nova aba)`}
+            >
+              Abrir imagem original <Arrow diagonal />
+            </a>
+          </div>
+          <button autoFocus onClick={() => dialog.current?.close()} aria-label="Fechar captura">
+            Fechar <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        {expanded && <ProjectImage project={project} priority />}
+      </dialog>
     </div>
   );
 }
@@ -213,8 +267,8 @@ function Hero() {
             <a className="button button-cyan" href="#projetos">
               Explorar projetos <Arrow />
             </a>
-            <a className="quiet-link" href={profile.github}>
-              GitHub <CodeIcon />
+            <a className="quiet-link" href="#contato">
+              Contato <Arrow />
             </a>
           </div>
           <p className="hero-footnote">Atualmente na {profile.company}.</p>
@@ -224,33 +278,25 @@ function Hero() {
             <span>Projetos em destaque</span>
             <span aria-hidden="true">0{selected + 1} / 02</span>
           </div>
-          <a
-            className={`showcase-window ${project.id}`}
-            href={caseUrl(project.caseSlug!)}
-            aria-label={`Ler o case ${project.name}`}
-          >
+          <div className={`showcase-window ${project.id}`}>
             <div className="window-bar" aria-hidden="true">
               <span />
               <span />
               <span />
               <b>{project.name}</b>
-              <Arrow diagonal />
             </div>
-            <div className="hero-screen">
-              <ProjectImage project={project} priority />
-            </div>
-          </a>
+            <ProjectPreview key={project.id} project={project} priority />
+          </div>
           <div className="showcase-bottom">
             <div>
-              <span className="small-label">Em foco</span>
               <h2>{project.name}</h2>
             </div>
             <a
               href={caseUrl(project.caseSlug!)}
-              className="round-link"
-              aria-label={`Conhecer as decisões do ${project.name}`}
+              className="showcase-case-link"
+              aria-label={`Ler o case ${project.name}`}
             >
-              <Arrow />
+              Ler o case <Arrow />
             </a>
           </div>
           <div className="project-switch" aria-label="Projeto em destaque">
@@ -260,12 +306,11 @@ function Hero() {
                 aria-pressed={selected === index}
                 onClick={() => setSelected(index)}
               >
-                <span aria-hidden="true">0{index + 1}</span>
                 {item.name}
               </button>
             ))}
           </div>
-          <p className="showcase-note">Capturas reais dos produtos, com dados demonstrativos.</p>
+          <p className="showcase-note">Demos sem login, com dados fictícios.</p>
         </div>
       </div>
     </section>
@@ -539,7 +584,7 @@ function Footer() {
         </a>
         <div>
           <a href={`${base}creditos/`}>Créditos e fontes</a>
-          <span>© 2026 · v0.1.2</span>
+          <span>© 2026 · v0.2.0</span>
         </div>
       </div>
     </footer>
@@ -573,6 +618,16 @@ function CasePage({ study }: { study: CaseStudy }) {
           <ProjectPreview project={project} priority />
         </div>
       </section>
+      <div className="container">
+        <dl className="case-facts" aria-label="Resumo do projeto">
+          {study.facts.map((fact) => (
+            <div key={fact.label}>
+              <dt>{fact.label}</dt>
+              <dd>{fact.text}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
       <div className="container case-layout">
         <nav className="case-nav" aria-label="Neste case">
           <p>Neste case</p>
@@ -590,15 +645,6 @@ function CasePage({ study }: { study: CaseStudy }) {
             <h2>O problema antes da implementação</h2>
             <p>{study.context}</p>
           </section>
-          <figure className={`case-capture ${project.id}`}>
-            <ProjectImage project={project} priority />
-            <figcaption>
-              Captura real da interface com dados demonstrativos.{' '}
-              {project.id === 'nextage'
-                ? 'A demonstração é separada do piloto com servidor.'
-                : 'O envio apresentado na demo é simulado.'}
-            </figcaption>
-          </figure>
           <section id="fluxo">
             <p className="section-kicker">Fluxo principal</p>
             <h2>Fluxo de uso</h2>
@@ -719,7 +765,8 @@ function Credits() {
       <p>
         Manrope, de Mikhail Sharanda, e DM Sans, de Colophon Foundry e colaboradores, distribuídas
         sob SIL Open Font License e hospedadas junto do site. Ícones e monograma desenhados em SVG
-        para este portfólio. O símbolo do GitHub identifica os repositórios e preserva os direitos da marca.
+        para este portfólio. O símbolo do GitHub identifica os repositórios e preserva os direitos
+        da marca.
       </p>
       <h2>Conteúdo e participação</h2>
       <p>

@@ -2,6 +2,16 @@
 
 Use semantic versioning for a coherent release, rather than incrementing for each commit. Keep this file, package.json, package-lock.json and the displayed footer version consistent. Ask Cristian before a later release/version change unless already authorized in the task.
 
+## 0.2.0 — 2026-11-03
+
+- Shorten the opening, simplify decorative elements and expose demo/code actions in the project showcase.
+- Keep navigation available during reading and align anchor offsets with the sticky header.
+- Improve supporting text sizes and project-action touch targets across responsive layouts.
+- Add concise case summaries for audience, participation and the version being demonstrated.
+- Add a native modal capture viewer and remove repeated full-page screenshots from case bodies.
+- Refine case copy and document the professional review and its online references.
+- Add the verified isolated Gacha Management demo, local-progress details and contextualized demo technologies (2026-11-03).
+
 ## 0.1.2 — 2026-11-02
 
 - Group compact demo and source-code actions with project captures on the homepage and case headers.

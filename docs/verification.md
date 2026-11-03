@@ -25,7 +25,7 @@ Revisão independente das fontes conferiu separação demo/piloto, assistência 
 - Não houve execução em aparelho físico, Safari ou Firefox, nem auditoria por leitor de tela. A revisão responsiva usou viewport do navegador.
 - Os testes do site não certificam os fluxos das aplicações externas.
 - Os fluxos completos de Nextage e Fitness pertencem às validações dos respectivos projetos. Aqui foram conferidos entrada, identificação da demo e destinos dos links.
-- OCR não tem captura pública elegível. Gacha compartilhado não é apresentado como demo descartável.
+- OCR não tem captura pública elegível. A aplicação normal do Gacha usa banco compartilhado; a demo pública isolada foi incorporada à revisão local em 03/11/2026, conforme registro abaixo.
 
 ## Publicação
 
@@ -55,3 +55,30 @@ Capturas da revisão local ficam em `work/qa/` (ignoradas pelo Git): desktop, ce
 - Links de demo/código sinalizam abertura em nova aba; foco visível preservado.
 - Build, TypeScript, testes de rotas e cinco páginas pré-renderizadas aprovados. Verificação de 90 referências locais.
 - Conferência em 1440 e 320 pixels, sem rolagem horizontal ou botões cortados. Captura em `work/qa/2026-11-02/delivery-1-case.jpg`.
+
+A versão 0.1.2 foi publicada no commit `648b894`, com [GitHub Actions concluído](https://github.com/cristianworth/portfolio/actions/runs/41447201382). Início, cases, créditos e arquivos públicos responderam corretamente; a URL inexistente retornou 404. O HTML público foi conferido com `v0.1.2`, sem a revisão local `v0.2.0`.
+
+## Revisão profissional 0.2.0 — prévia local de 02/11/2026
+
+- Sem commit ou push, conforme pedido de Cristian. Versão, manifests e rodapé preparados para 0.2.0; changelog identifica a revisão como não publicada.
+- Build com TypeScript, dois testes de rotas, cinco páginas pré-renderizadas e 96 referências locais aprovados.
+- Início e ambos os cases conferidos em 320, 768, 1024 e 1440 px; também houve inspeção da abertura em 390 px. Sem rolagem horizontal, ações cortadas ou imagens quebradas observadas. Demo, código e ampliação têm altura mínima de 44 px.
+- Menu mobile abre e fecha ao escolher um destino. Âncora de decisões no desktop mantém o título abaixo do cabeçalho; índice lateral fica abaixo dele, sem sobreposição.
+- Seletor da vitrine troca imagem e destinos de Nextage para Worklog. Demo/código continuam agrupados e o link do case tem texto visível.
+- Captura completa de Worklog aberta em diálogo modal em desktop e 320 px. Rolagem interna disponível para a imagem longa. Botão e Escape fecham e devolvem o foco à ação de origem; Shift+Tab chega ao link da imagem original. O fundo usa o comportamento inerte nativo do modal. Sem dependência nova.
+- Abertura final em 1440 px: seção hero com aproximadamente 681 px, com a seção seguinte começando a 762 px do topo. Capturas locais em `work/qa/2026-11-02/delivery-2-*.jpg`.
+- A verificação do site não reexecuta os testes dos produtos externos. Não houve teste em aparelho físico, Safari/Firefox ou auditoria com leitor de tela; as verificações de interface usaram o Chromium disponível.
+
+## Demo pública do Gacha Management — 03/11/2026
+
+- URL `/GachaManagement-cloud/demo/` aberta no navegador: interface Games, versão 1.20.0, perfil “Minha demo” e indicação de progresso salvo neste navegador. A aplicação normal e seu perfil chamado Demo não foram usados.
+- Botão “Experimentar demo” incorporado ao lado de “Ver código” pelo componente existente. Ambos abrem nova aba com `noopener noreferrer` e nomes acessíveis que identificam o projeto e a nova aba. O Tab passa da demo ao código, com foco visível.
+- Clique na demo a partir do card confirmou Games e “Sobre a demo” no destino isolado. Clique no código confirmou o repositório `cristianworth/GachaManagement-cloud` no GitHub.
+- Card conferido em desktop 1440×1000 e viewports 390×844 e 320×844. Sem transbordamento horizontal ou ações cortadas; botões com 44 px de altura. Capturas em `work/qa/2026-11-03/gacha-demo-desktop.jpg` e `gacha-demo-mobile.jpg`.
+- Status, stack da demo, texto de apoio, README e fontes editoriais atualizados. A nota explica exemplos restauráveis, banners/avisos demonstrativos, primeira abertura mais lenta e perda do progresso ao limpar o armazenamento. A captura existente continua identificada como prévia local fictícia.
+- Dois testes de rotas, TypeScript/build, cinco páginas pré-renderizadas e 96 referências locais aprovados. Sem reexecução dos 702 testes do Gacha; essa validação pertence à entrega do projeto.
+- Integração mantida na revisão local 0.2.0 já autorizada, sem novo incremento, commit, push ou publicação do portfólio.
+
+## Fechamento da versão 0.2.0 — 03/11/2026
+
+Após a conferência local, Cristian aprovou commit e push da revisão profissional e da integração da demo do Gacha. Changelog, manifests e rodapé usam 0.2.0; o push para `main` aciona a publicação pelo workflow existente. Os registros acima conservam o estado observado em cada conferência local.

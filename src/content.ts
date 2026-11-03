@@ -116,16 +116,22 @@ export const projects: Project[] = [
     id: 'gacha',
     name: 'Gacha Management',
     category: 'Rotinas de jogos',
-    status: 'Aplicação com perfis compartilhados',
+    status: 'Demo pública isolada • progresso local',
     description: 'Organização de tarefas e eventos em jogos.',
     focus:
       'Stamina, tarefas, eventos e banners por perfil, preservando escolhas manuais durante a sincronização.',
-    technologies: ['JavaScript', 'HTML e CSS', 'PostgreSQL / Supabase'],
+    technologies: [
+      'JavaScript',
+      'HTML e CSS',
+      'PostgreSQL / Supabase',
+      'PGlite / IndexedDB na demo',
+    ],
     code: 'https://github.com/cristianworth/GachaManagement-cloud',
+    demo: 'https://cristianworth.github.io/GachaManagement-cloud/demo/',
     demoNote:
-      'A versão online usa perfis públicos e banco compartilhado. Conheça o código e a prévia local documentada.',
+      'Experimente eventos e capas da API, sem conta ou instalação. Seu progresso fica só no navegador; os exemplos podem ser restaurados. Banners e avisos são demonstrativos. A primeira abertura pode demorar; limpar os dados apaga o progresso.',
     image: 'gacha',
-    imageAlt: 'Gacha Management: painel com perfil Demo, stamina, tarefas e eventos fictícios.',
+    imageAlt: 'Gacha Management: prévia local com stamina, tarefas e eventos fictícios.',
     imageWidth: 1440,
     imageHeight: 960,
   },
@@ -155,6 +161,7 @@ export type CaseStudy = {
   title: string;
   introduction: string;
   context: string;
+  facts: { label: string; text: string }[];
   flow: { title: string; text: string }[];
   decisions: { title: string; text: string; tradeoff: string }[];
   sections: CaseSection[];
@@ -165,6 +172,17 @@ export const cases: CaseStudy[] = [
   {
     slug: 'nextage-class',
     projectId: 'nextage',
+    facts: [
+      { label: 'Para quem', text: 'Professores particulares de idiomas e seus alunos.' },
+      {
+        label: 'Minha participação',
+        text: 'Prioridades, decisões do produto e validação com uma professora real.',
+      },
+      {
+        label: 'Nesta versão',
+        text: 'Demo no navegador. Piloto com API e autenticação em desenvolvimento.',
+      },
+    ],
     title: 'Agenda e histórico de aulas',
     introduction:
       'Agenda, preparação e registro de aulas individuais, com histórico pedagógico e consulta do aluno.',
@@ -216,12 +234,12 @@ export const cases: CaseStudy[] = [
         title: 'O que foi validado',
         paragraphs: [
           'A documentação registra a aprovação dos fluxos da professora e da simulação do aluno com a professora de referência, em outubro de 2026.',
-          'Há um cenário automatizado documentado que percorre pedido semanal, aprovação, remarcação individual, registro da aula, consulta do aluno e recarga. Essas são evidências do projeto; os testes do produto não foram reexecutados para construir este portfólio.',
+          'Um cenário automatizado documentado percorre pedido semanal, aprovação, remarcação individual, registro da aula, consulta do aluno e recarga.',
         ],
       },
       {
         id: 'limits',
-        title: 'O que a demo não comprova',
+        title: 'Escopo e limites',
         paragraphs: [
           'A demonstração usa dados fictícios e armazenamento no navegador. Não oferece autenticação real nem sincronização entre pessoas ou dispositivos. Um pedido pendente não reserva horário.',
           'O piloto tem trabalho de contas e convites implementado, mas mantém verificações integradas reais de acesso e etapas de persistência e operação em aberto. O projeto não é apresentado como serviço já operando com alunos reais.',
@@ -270,6 +288,14 @@ export const cases: CaseStudy[] = [
   {
     slug: 'worklog',
     projectId: 'worklog',
+    facts: [
+      { label: 'Origem', text: 'Minha rotina de recompor e enviar apontamentos de horas.' },
+      {
+        label: 'Minha participação',
+        text: 'Definição do fluxo, restrições de uso e validação dos resultados.',
+      },
+      { label: 'Nesta versão', text: 'Demo no navegador, com envio simulado e dados fictícios.' },
+    ],
     title: 'Registro e envio de horas',
     introduction:
       'Um fluxo para recompor apontamentos de vários dias e lidar com o que acontece quando um envio ao Redmine termina pela metade.',
@@ -327,7 +353,7 @@ export const cases: CaseStudy[] = [
         title: 'O que foi validado',
         paragraphs: [
           'Os guias registram edição, salvamento, recarga, restauração de exemplos, teclado, telas estreitas e cenários de falha com recibos. O changelog v0.9.0, de outubro de 2026, documenta as verificações daquela entrega.',
-          'No modo local, houve verificações autorizadas de criação e leitura correspondente no Redmine, com confirmação visual. Isso não comprova compatibilidade com todas as atividades, permissões e customizações. São evidências históricas do projeto, não testes de integração executados por este site.',
+          'No modo local, houve verificações de criação e leitura correspondente no Redmine, com confirmação visual. A compatibilidade com outras atividades, permissões e customizações ainda precisa ser verificada em cada instalação.',
         ],
       },
       {

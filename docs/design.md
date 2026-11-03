@@ -29,4 +29,6 @@ experiência / sobre / contato  experiência / sobre / contato
 
 A paleta azul/índigo/ciano do site foi preservada nesta revisão. As tecnologias aparecem em quatro grupos por área, com tags de texto legíveis. Nextage e Worklog conservam suas interfaces nas capturas; os produtos não recebem uma marca substituta.
 
-Na revisão inicial, a proposta foi ajustada para evitar um mural de cards iguais: dois cases com composições alternadas, três projetos complementares menores, laboratório em linha e experiência em uma faixa própria. O único movimento de entrada está na vitrine; a troca de produto responde à ação do visitante. `prefers-reduced-motion` remove entrada, transições, inclinação e rolagem suave.
+Na revisão inicial, a proposta foi ajustada para evitar um mural de cards iguais: dois cases com composições alternadas, três projetos complementares menores, laboratório em linha e experiência em uma faixa própria. O único movimento de entrada está na vitrine; a troca de produto responde à ação do visitante. `prefers-reduced-motion` remove entrada, transições e rolagem suave.
+
+A revisão local 0.2.0 simplifica a vitrine, remove inclinação/anéis decorativos, reduz a abertura e preserva a navegação durante a leitura. Demo e código ficam agrupados sob a captura; “Ler o case” leva às decisões. Os cases têm resumo de contexto, participação e estágio e permitem ampliar a captura sob demanda. Veja `docs/design-review.md` para diagnóstico, referências e limites.
