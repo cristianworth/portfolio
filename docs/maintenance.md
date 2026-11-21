@@ -45,9 +45,17 @@ npm run verify
 npm run preview
 ```
 
-Confira os tamanhos desktop/celular, menu, Tab/Enter/Escape, imagens, links e recarga direta dos cases. Depois faça commit e push para `main`. O workflow publica `dist`. Se falhar, consulte a etapa do Actions antes de repetir o deploy. A publicação exige permissões Pages habilitadas com source GitHub Actions.
+Confira os tamanhos desktop/celular, menu, Tab/Enter/Escape, imagens, links e recarga direta dos cases. Encaminhe a entrega por branch e PR conforme o fluxo abaixo. A integração em `main` aciona o workflow existente, que publica `dist`; informe esse efeito no PR. Se falhar, consulte a etapa do Actions antes de repetir o deploy. A publicação exige permissões Pages habilitadas com source GitHub Actions.
 
 Antes de uma nova versão, leia `CHANGELOG.md` e combine o incremento com Cristian. A primeira entrega inteira usa 0.1.0 por autorização explícita, mesmo com mais de um commit.
+
+## Fluxo de contribuição
+
+- Para mudanças solicitadas ou aprovadas, prepare uma branch curta a partir de `main` remota atualizada, preservando trabalho local. Use issue quando houver algo a acompanhar; mudanças pequenas podem ser descritas diretamente no PR.
+- Respeite o escopo autorizado no pedido para issues, branches, commits, push e PR. Esse processo não amplia a autorização de uma entrega nem concede permissão operacional geral.
+- Abra um PR com a mudança, verificações, limitações e issue relacionada, quando houver. Use rascunho enquanto houver revisão ou validação pendente. Não há CI automático de PR neste repositório; registre essa ausência e não dispare o workflow de publicação apenas para obter um check.
+- Integre somente após aprovação de Cristian para o diff revisado e confirmação das verificações aplicáveis ao SHA atual. Se o conteúdo mudar após a aprovação, apresente o novo diff e aguarde nova aprovação. Push direto em `main` exige autorização explícita.
+- Quando uma integração autorizada acionar a publicação existente, acompanhe a execução do commit integrado e confira o resultado publicado. Publicação manual mantém sua autorização própria; preserve as rotinas e as regras de versão acima.
 
 ## Trecho sugerido para o perfil GitHub
 
